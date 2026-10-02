@@ -61,6 +61,8 @@
     pulse.enable = true;
   };
 
+  security.sudo.extraConfig = "Defaults pwfeedback";
+
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
@@ -83,6 +85,7 @@
   };
 
   programs.firefox.enable = true;
+  programs.foot.enable = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -95,6 +98,9 @@
     wget
     cage
     git
+    sdl3
+    gcc15
+    gnumake
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
