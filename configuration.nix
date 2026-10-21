@@ -70,10 +70,13 @@
   users.users.pinball = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
-    hashedPassword = "$y$j9T$hieZQQxfkXDg7YJMPgiA8/$7rRqXwihOx5uqbvm4UR4/16FIHX3anoqJPIiy1xJdDD";
+    initialHashedPassword = "$y$j9T$hieZQQxfkXDg7YJMPgiA8/$7rRqXwihOx5uqbvm4UR4/16FIHX3anoqJPIiy1xJdDD";
     packages = with pkgs; [
     ];
   };
+  
+  services.getty.autologinUser = "pinball";
+  services.getty.autologinOnce = true;
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
